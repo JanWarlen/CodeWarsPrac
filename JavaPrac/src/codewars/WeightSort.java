@@ -55,8 +55,9 @@ public class WeightSort {
 				}else if(weight[j] == weight[j+1]){
 					char[] num1 = String.valueOf(list[j]).toCharArray();
 					char[] num2 = String.valueOf(list[j+1]).toCharArray();
-					for (int j2 = 0; j2 < num1.length; j2++) {
-						if(num1[j2] > num2[j2] ){
+					int j2 = 0;
+					for (; j2 < num1.length && j2 < num2.length; j2++) {
+						if(num1[j2] > num2[j2]){
 							list[j] += list[j+1];
 							list[j+1] = list[j] - list[j+1];
 							list[j] -= list[j+1];
@@ -64,6 +65,11 @@ public class WeightSort {
 						}else if(num1[j2] < num2[j2] ){
 							break;
 						}
+					}
+					if (j2 == num2.length && list[j] > list[j+1]) {
+						list[j] += list[j+1];
+						list[j+1] = list[j] - list[j+1];
+						list[j] -= list[j+1];
 					}
 				}
 			}
@@ -83,7 +89,20 @@ public class WeightSort {
 	    return str_buff.toString(); 
 	}
 	
+	//best answer
+/*	public static String orderWeight(String string) {
+		String[] split = string.split(" ");
+		Arrays.sort(split, new Comparator<String>() {
+			public int compare(String a, String b) {
+				int aWeight = a.chars().map(c -> Character.getNumericValue(c)).sum();
+				int bWeight = b.chars().map(c -> Character.getNumericValue(c)).sum();
+				return aWeight - bWeight != 0 ? aWeight - bWeight : a.compareTo(b);
+			}
+		});
+		return String.join(" ", split);
+	}*/
+	
 	public static void main(String[] args) {
-		System.out.println(orderWeight("1"));
+		System.out.println(orderWeight("71899703 200 6 91 425 4 67407 7 96488 6 4 2 7 31064 9 7920 1 34608557 27 72 18 81"));
 	}
 }
