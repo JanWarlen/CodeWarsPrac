@@ -1,0 +1,24 @@
+
+// https://www.codewars.com/kata/522551eee9abb932420004a0
+public class Fibonacci
+{
+  public int NthFib(int n)
+  {
+    // Return the n-th number in the Fibonacci Sequence
+    int a=1,b=1,c=2;
+    if ((n-1) == 0)
+      return 0;
+    else if ( (n-1) <= 2)
+      return 1;
+    else
+    {
+    for(int i = 3; i < n;i++)
+    {
+      c=a+b;
+      a=b;
+      b=c;
+    }
+    return c;
+    }
+  }
+}

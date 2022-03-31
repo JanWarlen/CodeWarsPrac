@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
+
+// https://www.codewars.com/kata/5583d268479559400d000064
+public static class Kata
+{
+  public static string BinaryToString(string binary)
+  {
+      var text = new StringBuilder();
+
+      //Do magic..
+     byte result;
+            List<byte> binaryByte = new List<byte>();
+            MatchCollection collections = Regex.Matches(binary, "([0-9]{8})+?");
+            for (int i = 0; i < collections.Count; i++)
+            {
+                string temp=collections[i].ToString();
+                if (byte.TryParse(Convert.ToInt32(temp, 2).ToString(), out result))
+                {
+                    binaryByte.Add(result);
+                }
+            }
+            text.Append(Encoding.ASCII.GetString(binaryByte.ToArray()));
+
+      return text.ToString();
+  }
+}

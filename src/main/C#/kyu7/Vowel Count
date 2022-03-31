@@ -1,0 +1,17 @@
+// https://www.codewars.com/kata/54ff3102c1bad923760001f3
+
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+public static class Kata
+{
+    public static int GetVowelCount(string str)
+    {
+        int vowelCount = 0;
+
+        // Your code here
+
+        return Regex.Matches(str, "a|e|i|o|u").Count;
+    }
+}

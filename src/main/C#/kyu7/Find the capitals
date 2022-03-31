@@ -1,0 +1,25 @@
+// https://www.codewars.com/kata/539ee3b6757843632d00026b
+
+
+using System;
+using System.Collections.Generic;
+
+public static class Kata
+{
+  public static int[] Capitals(string word)
+  {
+    //Write your code here
+     List<int> list = new List<int>();
+            int[] location;
+
+            for (int j=0;j < word.Length;j++)
+            {
+                if (word[j] > 64 && word[j] < 91)
+                {
+                    list.Add( j);
+                }
+            }
+            location = list.ToArray();
+            return location;
+  }
+}

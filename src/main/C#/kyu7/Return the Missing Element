@@ -1,0 +1,19 @@
+// https://www.codewars.com/kata/5299413901337c637e000004
+
+using System;
+
+public static class Kata
+{
+  public static int GetMissingElement(int[] superImportantArray)
+  {
+    //TODO
+    Array.Sort(superImportantArray);
+    for(int i = 0; i < superImportantArray.Length; i++)
+    {
+      if (superImportantArray[i] != i)
+        return i;
+    }
+
+    return 9;
+  }
+}

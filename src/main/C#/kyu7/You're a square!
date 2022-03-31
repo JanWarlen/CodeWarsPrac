@@ -1,0 +1,17 @@
+// https://www.codewars.com/kata/54c27a33fb7da0db0100040e
+
+using System;
+
+public class Kata
+{
+  public static bool IsSquare(int n)
+  {
+    //Your code goes here!
+     double r = Math.Sqrt(n);
+            if ((r - (int)r) == 0)
+            {
+                return true;
+            }
+            return false;
+  }
+}

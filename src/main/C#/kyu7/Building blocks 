@@ -1,0 +1,33 @@
+// https://www.codewars.com/kata/55b75fcf67e558d3750000a3
+
+public class Block
+{
+  // Gooc Luck!
+  private int[] block;
+
+  public Block(int[] block)
+  {
+      this.block = block;
+  }
+
+  public int GetWidth()
+  {
+    return block[0];
+  }
+  public int GetLength()
+  {
+    return block[1];
+  }
+  public int GetHeight()
+  {
+    return block[2];
+  }
+  public int GetVolume()
+  {
+    return block[0]*block[1]*block[2];
+  }
+  public int GetSurfaceArea()
+  {
+    return 2*(block[0]*block[1]+block[0]*block[2]+block[1]*block[2]);
+  }
+}
